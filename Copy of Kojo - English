@@ -26,28 +26,28 @@ val chapters = Seq(
 //------------------------------------------------------   
   Chapter(id="forward", head="Your first program", template=TextWithImage("fram.png",14), 
     contents=Seq(
-      taskHead, Para("Skriv så här i Kojos skripteditor-fönster:"),
+      taskHead, Para("Write the following in the Kojo script editor window:"),
       Code("""
 clear
 forward
        """.trim, size=30),
-      Para("Tryck på den gröna play-knappen "), Image("play.png",1), LineBreak,
-      Para("för att köra igång ditt program."), LineBreak, VSkip(5)
+      Para("Press the green play button "), Image("play.png",1), LineBreak,
+      Para("to run your program."), LineBreak, VSkip(5)
     )
   ), 
 //------------------------------------------------------   
-  Chapter(id="square", head="Rita en kvadrat", template=TextWithImage("square.png"), 
+  Chapter(id="square", head="Draw a square", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
 clear
 forward
 right
        """.trim, size=30),
-    Para("Om du skriver {:vänster:} eller {:höger:} så vrider sig paddan."),
-    taskHead, Para("Utöka programmet så att det blir en kvadrat.")
+    Para("If you write {:left:} or {:right:} the turtle will change direction."),
+    taskHead, Para("Extend the program so that it makes a square.")
     )
   ),
-  Chapter(id="stairs", head="Rita en trappa", template=TextWithImage("stairs.png"), 
+  Chapter(id="stairs", head="Draw stairs", template=TextWithImage("stairs.png"), 
     contents=Seq(
       Code("""
 clear
@@ -55,24 +55,24 @@ forward; left
 forward; right
 
        """.trim, size=30), VSkip(1), 
-    Para("Med semikolon {:;:} mellan satserna kan du ha flera satser på samma rad."),
-    taskHead, Para("Utöka programmet så att det blir en trappa.")
+    Para("With semicolon {:;:} between the commands, you could have several commands on the same line."),
+    taskHead, Para("Extend the program so that it makes stairs.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="square-repeat", head="Gör en loop", template=TextWithImage("square.png"), 
+  Chapter(id="square-repeat", head="Make a loop", template=TextWithImage("square.png"), 
     contents=Seq(
       Code("""
 clear
 repeat(4){ forward; right }
        """.trim, size=30),
-      taskHead, Itemize("Vad händer om du ändrar 4 till 100?","Rita en trappa med 100 trappsteg.") 
+      taskHead, Itemize("What will happen if you change 4 to 100?","Draw stairs with 100 steps.") 
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="alien", head="Rita en gubbe", template=MultiColumn(2), 
+  Chapter(id="alien", head="Draw a character", template=MultiColumn(2), 
     contents=Seq(
-      taskHead, Para("Rita en gubbe som du själv vill."),
+      taskHead, Para("Draw a character of your choice."),
       hintHead, 
       Code("""
 hop
@@ -80,153 +80,153 @@ left(180)
 forward(300)
 hop(100)
 jumpTo(25,-28)
-write("FELIX är bäst")
+write("FELIX is awesome")
 setPenColor(purple)
 setFillColor(green)
        """.trim, size=20),
-      Para("Du kan se paddans läge nere till vänster medan du rör muspekaren i Ritfönstret:"), Image("mousepos.png", 6),
+      Para("You can see the turtle's position down to the left while moving the mouse in the Drawing Window:"), Image("mousepos.png", 6),
       ColumnBreak,
       CenterImage("man.png",4.5), VSkip(2), CenterImage("alien.png",9)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="check-speed", head="Hur snabb är din dator?", 
+  Chapter(id="check-speed", head="How fast is your computer?", 
     //template=MultiColumn(2),
     contents=Seq(
-      Para( "Den första elektroniska datorn hette {*ENIAC*} och kunde räkna till 5000 på en sekund.",
-        "I Kojo finns en funktion {:räknaTill:} som mäter hur snabbt datorn kan räkna.",
-        "När jag kör {:räknaTill(5000):} på min snabba dator skrivs detta i utdata-fönstret:"),
+      Para( "The first electronic computer was called {*ENIAC*} and could count up to 5000 in a second.",
+        "In Kojo there is a function {:räknaTill:} that measures how fast the computer counts.",
+        "When I run {:räknaTill(5000):} on my fast computer, the following appears in the output window:"),
       Code("""
 *** Räknar från 1 till ... 5000 *** KLAR!
 Det tog 0.32 millisekunder.
       """),
       taskHead, 
-      Itemize("Kör {:räknaTill(5000):} och kolla om din dator är snabbare än min.",
-              "Hur lång tid tar det för din dator att räkna till en miljon?",
-              "Hur långt hinner din dator räkna till på en sekund?")      
+      Itemize("Run {:räknaTill(5000):} and check if your computer is faster than mine.",
+              "How long does it take for your computer to count up to a million?",
+              "How much can your computer count to in a second?")      
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="trace", head="Spåra programmet", template=TextWithImage("trace.png"), 
+  Chapter(id="trace", head="Track the program", template=TextWithImage("trace.png"), 
     contents=Seq(
       taskHead, Itemize(
-        "Skriv ett program som ritar ett trappsteg.",
-        "Tryck på den orange-färgade play-knappen.",
-        "Klicka på ett av anropen: {:CALL fram:}. Vad händer i Ritfönstret?",
-        "När en del av programmet är markerad med blått körs bara denna del om du trycker play. Avmarkera genom att klicka bredvid markeringen. ",
-        "Lägg till fler satser i ditt program och se vad som händer när du spårar.",
-        "Stäng fönstret {/Programspårning/} när du är klar.")
+        "Write a program that draws stairs.",
+        "Press the orange play button.",
+        "Press on one of the commands: {:CALL fram:}. What happens in the Drawing Window?",
+        "When a part of the program is marked in blue, only that part will run when you press the play button. You can unmark the code if you click next to the code that is marked. ",
+        "Add more commands to your program and observe what happens when you track it.",
+        "Close the window {/Program tracker/} when you're done.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square", head="Gör din egen funktion med {:def:}", 
+  Chapter(id="def-square", head="Write your own function with {:def:}", 
     contents=Seq(
-      Para("Med {:def:} kan du göra egna {/funktioner/} som du själv väljer namn på."), 
+      Para("With {:def:} you can write your own {/functions/} and choose their names."), 
       Code("""
-def kvadrat =  repeat(4){ forward; right }  
+def square =  repeat(4){ forward; right }  
 
 clear
-kvadrat    //använd din kvadrat-funktion
+square    //use your square-function
 hop
-kvadrat   
+square   
        """.trim, size=20),
-    taskHead, Itemize("Byt färg på kvadraterna.", "Gör fler kvadrater."),
+    taskHead, Itemize("Change the color of the squares.", "Make several squares."),
     hintHead, Code("""
 setFillColor(green); setPenColor(purple)
        """.trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="square-column", head="Stapla kvadrater", 
+  Chapter(id="square-column", head="Stack squares", 
     template=TextWithImage("square-column.png"),
     contents=Seq(
-    taskHead, Para("Gör en stapel med 10 kvadrater."),
+    taskHead, Para("Make a stack of 10 squares."),
     hintHead, VSkip(1),
     Code("""
-def kvadrat =  repeat(4){ forward; right }  
+def square =  repeat(4){ forward; right }  
 
 clear; setAnimationDelay(100)
 repeat(10){ ??? }""".trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-column", head="Gör en stapelfunktion", 
+  Chapter(id="def-square-column", head="Make a stack-function", 
     template=TextWithImage("square-column.png"),
     contents=Seq(
-      taskHead, Para("Gör en funktion som heter {:stapel:}, som ritar en stapel med 10 kvadrater."),
+      taskHead, Para("Make a function called {:stack:}, that draws a stack of 10 squares."),
       hintHead,  
       Code("""
-def kvadrat = repeat(4){ forward; right }  
-def stapel = ???
+def square = repeat(4){ forward; right }  
+def stack = ???
 
 clear; setAnimationDelay(100)
-stapel""".trim)
+stack""".trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="square-grid", head="Gör ett rutnät", 
+  Chapter(id="square-grid", head="Make a grid", 
     template=TextWithImage("square-grid.png"),
     contents=Seq(
-      taskHead, Para("Gör ett rutnät med 10*10 kvadrater."),
-      hintHead, Itemize("Använd din stapelfunktion från tidigare.",
-      "Du kan hoppa baklänges en hel stapelhöjd med {:hoppa(-10 * 25):}",
-      "Du kan sedan hoppa till rätt plats med {:höger; hoppa; vänster:}") 
+      taskHead, Para("Make a grid of 10*10 squares."),
+      hintHead, Itemize("Use your stack-function that you created earlier.",
+      "You can jump backwards a whole column with {:hoppa(-10 * 25):}",
+      "You can then jump to the right position with {:right; hoppa; left:}") 
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-param", head="Kvadrat med parameter", 
+  Chapter(id="def-square-param", head="square med parameter", 
     template=MultiColumn(2),
     contents=Seq(
-      taskHead, Para("Rita olika stora kvadrater."),
+      taskHead, Para("Draw squares in different sizes."),
       hintHead, 
-      Para("Ge din kvadrat-funktion en {/parameter/},","med namnet {:sidlängd:} och typen {:Heltal:}:"), 
+      Para("Give your function a {/parameter/},","called {:sideLength:} of the type {:Int:}:"), 
       Code("""
-def kvadrat(sidlängd : Int) = 
-  repeat(4){ forward(sidlängd); right }
+def square(sideLenght : Int) = 
+  repeat(4){ forward(sideLength); right }
 
 clear; setAnimationDelay(100); invisible
-kvadrat(100) 
-kvadrat(70)
-kvadrat(40)
+square(100) 
+square(70)
+square(40)
        """.trim,size=16), 
-      Para("Du kan byta färg med:","{:fyll(blå); färg(rosa):}"),
+      Para("You can change the color with:","{:setFillColor(blue); setPenColor(pink):}"),
       ColumnBreak,
       CenterImage("square-param.png",5),
       CenterImage("square-param-color.png",5)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="def-square-man", head="Rita en kvadratgubbe", 
+  Chapter(id="def-square-man", head="Draw a square character", 
     contents=Seq(
-      taskHead, Para("Rita en gubbe med hjälp av olika stora kvadrater."),
+      taskHead, Para("Draw a character with squares of different sizes."),
       LineBreak,
       OverlayImage("square-man.png",x = 20, y = -1, width = 5.5),
       hintHead,
       Code("""
-def kvadrat(x: Int, y: Int, sidlängd: Int) = {
+def square(x: Int, y: Int, sideLength: Int) = {
   jumpTo(x, y)
-  repeat(4) { forward(sidlängd); right }
+  repeat(4) { forward(sideLength); right }
 }
-def huvud(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); kvadrat(x, y, 200) }
-def öga(x: Int, y: Int) = { setFillColor(white); setPenColor(black); kvadrat(x, y, 40) }
-def pupill(x: Int, y: Int) = { setFillColor(black); setPenColor(black); kvadrat(x, y, 10) }
-def näsa(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); kvadrat(x, y, 30) }
-def mun(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); kvadrat(x, y, 40) }
+def head(x: Int, y: Int) = { setFillColor(pink); setPenColor(red); square(x, y, 200) }
+def eye(x: Int, y: Int) = { setFillColor(white); setPenColor(black); square(x, y, 40) }
+def pupil(x: Int, y: Int) = { setFillColor(black); setPenColor(black); square(x, y, 10) }
+def nose(x: Int, y: Int) = { setFillColor(blue); setPenColor(noColor); square(x, y, 30) }
+def mouth(x: Int, y: Int) = { setPenThickness (10); setFillColor(black); setPenColor(red); square(x, y, 40) }
 
 clear; setAnimationDelay(20); invisible
-huvud(0, 0)
-öga(40, 100); pupill(60, 100)
+head(0, 0)
+eye(40, 100); pupil(60, 100)
 ???
        """.trim,size=14)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygon", head="Rita en polygon", 
+  Chapter(id="plygon", head="Draw a polygon", 
     contents=Seq(
       taskHead, Itemize(
-        "Prova koden nedan. Rita olika slags polygoner.",
-        "Lägg till en parameter {:sidlängd:} och rita olika stora polygoner.",
-        "Hur stort behöver n vara för att det ska se ut som en cirkel?"),
+        "Try out the code below. Draw different kinds of polygons.",
+        "Add a parameter {:sideLength:} and draw polygons of different sizes.",
+        "How large does n have to be to make it look like a circle?"),
       hintHead,
       Code("""
 def polygon(n:Int) = repeat(n){
@@ -241,74 +241,74 @@ polygon(7)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="plygons", head="Rita många polygoner", 
+  Chapter(id="plygons", head="Draw several polygons", 
     contents=Seq(
       taskHead, Itemize(
-        "Prova programmet nedan.",
-        "Prova ändra antalet sidor och vinkel.",
-        "Fyll polygonerna med färg."),
+        "Try out the program below.",
+        "Try to change the amount of sides and the angle.",
+        "Fill the polygons with different colors."),
       OverlayImage("polygons-circle.png",x = 22, y = -0.5, width = 11),
       Code("""
-def polygon(n: Int, sidlängd: Int) = repeat(n){
-  forward(sidlängd)
+def polygon(n: Int, sideLength: Int) = repeat(n){
+  forward(sideLength)
   left(360.0/n)
 }
-def snurra(n: Int, heading: Int, sidlängd: Int) = 
-  repeat(360/heading){ polygon(n, sidlängd); left(heading) }
+def rotate(n: Int, heading: Int, sideLength: Int) = 
+  repeat(360/heading){ polygon(n, sideLength); left(heading) }
 
 clear; setAnimationDelay(5)
-snurra(7, 10, 100)
+rotate(7, 10, 100)
        """.trim,size=16)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="show-value", head="Värden och uttryck", 
+  Chapter(id="show-value", head="Values and expressions", 
     template = MultiColumn(2),
     contents=Seq(
       taskHead, 
-      Itemize("Skriv {:1 + 1:} och tryck på den blå play-knappen. Då skapar kojo en grön kommentar.", 
-        "Kommentaren visar att värdet av uttrycket {:1 + 1:} är {:2:} och att typen är {:Int:}, som betyder {:Heltal:}.",
-        "Gör fler uträkningar. Vad det blir för värde och typ?"),
+      Itemize("Write{:1 + 1:} and press the blue play button. Kojo will then create a green comment.", 
+        "The comment shows the value of the expression {:1 + 1:} that is {:2:} and the type is {:Int:}, which means {:Integer:}.",
+        "Create more expressions. What's the value and type?"),
       Code("""
 5 * 5
 10 + 2 * 5
-"hej" + "på" + "dej"
+"Hello" + "world"
 5 / 2
 5 / 2.0
 5 % 2
       """.trim),
       ColumnBreak, Image("show-value.png", width=12),
-      hintHead, Itemize("Med {:/:} mellan heltal blir det heltalsdivision och decimalerna kastas bort. För att det ska bli division med decimaler måste minst ett av talen vara ett decimaltal.","Med {:%:} får du resten vid en heltalsdivision.")
+      hintHead, Itemize("{:/:} between integers creates a division of integers and the decimals will be ignored. To make a division with decimals, at least one of the numbers must contain decimals.","With {:%:} you get the rest of a division of integers.")
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="val", head="Sätt namn på värden med {:val:}", 
+  Chapter(id="val", head="Name the values with {:val:}", 
     template=TextWithImage("val.png",width=12),
     contents=Seq(
       taskHead,
-      Para("Med {:val:} kan du koppla ett namn till ett värde. Namnet kan sedan användas istället för värdet. Prova programmet nedan. Vad skriver paddan?"),
+      Para("With {:val:} you can connect a name to a value. The name could then be used instead of the value. Try out the program below. What does the turtle write?"),
       Code("""
 val x = 10
 val y = 5
-val gurka = x + y
-val banan = x * y
+val cucumber = x + y
+val banana = x * y
 
 clear
-forward; write(banan)
-forward; write(gurka)
+forward; write(banana)
+forward; write(cucumber)
 forward; write(y)
 forward; write(x)
       """.trim)
     )
   ), 
 //------------------------------------------------------
-  Chapter(id="random-circles", head="Slumptal", 
+  Chapter(id="random-circles", head="Random numbers", 
     contents=Seq(
       taskHead, Itemize(
-        "Kör programmet nedan många gånger. Vad händer?",
-        "Vilket är det minsta och största möjliga värdet på radien {:r}?",
-        "Ändra så att {:r:} blir ett slumptal mellan 3 och 200.",
-        "Rita 100 cirklar med slumpmässig radie på slumpmässig plats, som bilden visar."),
+        "Run the program below several times. What happens?",
+        "What is the smallest and largest possible value of the radius {:r}?",
+        "Change it so that {:r:} becomes a random number between 3 and 200.",
+        "Draw 100 circles with random radiuses on random positions, as shown in the picture."),
       OverlayImage("random-circles.png",x=21,y= -5,width=8),
       Code("""
 //värdet r blir ett random mellan 10 och 89:
