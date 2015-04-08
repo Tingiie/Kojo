@@ -936,6 +936,3 @@ println("Thanks for the talk! Now I know these words:" + word)
 //********************
 println("********************* input:"+chapters)
 latexgen.make(chapters, "kojobook/tex/body-en.tex")
-
-
-
